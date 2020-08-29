@@ -55,7 +55,7 @@ def dfs(board, i, j ,word):
     res = dfs(board,i+1,j,word[1:]) or dfs(board,i-1,j,word[1:]) or dfs(board,i,j+1,word[1:]) \
         or dfs(board,i,j-1,word[1:])
 
-    board[i][j] = temp
+    board[i][j] = temp # Set it back
     return res
 
 
