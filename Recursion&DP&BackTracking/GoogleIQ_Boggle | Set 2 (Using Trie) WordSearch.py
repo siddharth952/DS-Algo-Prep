@@ -44,7 +44,7 @@ def wordSearchExist(board: List[List[str]], word: str) -> bool:
     return False
 
 def dfs(board, i, j ,word):
-    if len(word) == 0: # All chars checked
+    if len(word) == 0: # All chars checked res will be True
         return True
     if i<0 or i>=len(board) or j<0 or j>=len(board[0]) or word[0] != board[i][j]:
         return False
