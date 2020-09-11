@@ -2,11 +2,12 @@
 #include<vector>
 using namespace std;
 /*
-
 Useful when array is already partially sorted, min no of (swaps&comparisions) are required in such a case.
 
 Time: O(N^2) As 1 + 2 + 3 + ... + N-1 = (N*N-1)/2
 Space: O(1) As inplace 
+
+1st element is always sorted
 
 //=============|
 // Implementaion ==|>
@@ -16,8 +17,9 @@ void insertSort(int arr[],int len);
 void printArray(int arr[],int len);
 
 int main(){
-    int arr[6] = {5, 1, 6 ,2 ,3, 10};
-    insertSort(arr,6);
+    int arr[6] = {5, 1, 6 ,2 ,3, 10}; cout<<"Before:";
+    for(auto a:arr) cout<<a<<",";
+    insertSort(arr,6); cout<<endl<<"After:";
     for(auto a:arr) cout<<a<<",";
 }
 
@@ -29,13 +31,14 @@ void insertSort(int arr[], int length){
         j = i-1; // [1<---, 5, 12 ] i-1 as we need prevous of i ie j
         
         while (j >= 0 and arr[j] > key /*> As 12 needs to be greater than previous*/) {
-            arr[j+1] = arr[j]; // [1<---j, 5<---j+1, 12 ]
+            arr[j+1] = arr[j]; // [1<---j, 5<---j+1, 12 ] //Swapping here
             j--;
         }
-        arr[j+1] = key; // Insert here
+        arr[j+1] = key; // Insert here as found it's place
     }
     
 }
+
 
 //=============|
 // Questions ==|>
