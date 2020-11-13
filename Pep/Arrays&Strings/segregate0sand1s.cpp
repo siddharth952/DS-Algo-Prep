@@ -6,6 +6,7 @@ int main(){
     vector<int> arr = {0,1,1,0,0,0,1};
     // 2 regions are created i-> just after 0s, j just after 1s
     int i=0,j=0;
+    vector<int> s(1000000000);
     while(j < arr.size())
     {
         if (arr[j] == 1)
